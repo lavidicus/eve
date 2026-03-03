@@ -1,0 +1,156 @@
+{
+  "meta": {
+    "lastTouchedVersion": "2026.3.1",
+    "lastTouchedAt": "2026-03-02T20:45:05.614Z"
+  },
+  "wizard": {
+    "lastRunAt": "2026-03-02T20:45:05.581Z",
+    "lastRunVersion": "2026.3.1",
+    "lastRunCommand": "configure",
+    "lastRunMode": "local"
+  },
+  "auth": {
+    "profiles": {
+      "google:default": {
+        "provider": "google",
+        "mode": "api_key"
+      },
+      "openai-codex:default": {
+        "provider": "openai-codex",
+        "mode": "oauth"
+      }
+    }
+  },
+  "models": {
+    "mode": "merge",
+    "providers": {
+      "ollo": {
+        "baseUrl": "http://ollo:11434/v1",
+        "apiKey": "local",
+        "api": "openai-completions",
+        "models": [
+          {
+            "id": "ollo/qwen3.5-9B:latest",
+            "name": "qwen3.5-9B:latest (Custom Provider)",
+            "reasoning": false,
+            "input": [
+              "text",
+              "image"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 131072,
+            "maxTokens": 8192
+          }
+        ]
+      }
+    }
+  },
+  "agents": {
+    "defaults": {
+      "model": {
+        "primary": "ollo/qwen3.5-9B:latest",
+        "fallbacks": [
+          "openai/gpt-5.3-codex"
+        ]
+      },
+      "models": {
+        "ollo/qwen3.5-9B:latest": {
+          "alias": "qwen3.5"
+        },
+        "openai/gpt-5.3-codex": {}
+      }
+    },
+    "list": [
+      {
+        "id": "main",
+        "tools": {
+          "elevated": {
+            "enabled": true,
+            "allowFrom": {
+              "signal": [
+                "uuid:7f931e2c-add0-4977-a945-11782c1987b9",
+                "+17023494151"
+              ]
+            }
+          }
+        }
+      }
+    ]
+  },
+  "tools": {
+    "web": {
+      "search": {
+        "enabled": true,
+        "apiKey": "BSAPBHIyE3j3dPC4zXvazuyfX6ZUFeM"
+      },
+      "fetch": {
+        "enabled": true
+      }
+    },
+    "elevated": {
+      "enabled": true,
+      "allowFrom": {
+        "signal": [
+          "+17023494151"
+        ]
+      }
+    }
+  },
+  "commands": {
+    "native": "auto",
+    "nativeSkills": "auto",
+    "text": true,
+    "restart": true,
+    "ownerDisplay": "raw"
+  },
+  "channels": {
+    "signal": {
+      "enabled": true,
+      "account": "+13184141034",
+      "cliPath": "signal-cli",
+      "dmPolicy": "pairing",
+      "allowFrom": [
+        "+17023494151"
+      ],
+      "groupAllowFrom": [
+        "+17023494151"
+      ],
+      "groupPolicy": "allowlist"
+    }
+  },
+  "gateway": {
+    "port": 18789,
+    "mode": "local",
+    "bind": "loopback",
+    "auth": {
+      "mode": "token",
+      "token": "e2776b231feea3dd9dd5c6e62f65fc69034848805d3fbf0a"
+    },
+    "tailscale": {
+      "mode": "off",
+      "resetOnExit": false
+    },
+    "nodes": {
+      "denyCommands": [
+        "camera.snap",
+        "camera.clip",
+        "screen.record",
+        "calendar.add",
+        "contacts.add",
+        "reminders.add"
+      ]
+    }
+  },
+  "plugins": {
+    "entries": {
+      "signal": {
+        "enabled": true
+      }
+    }
+  }
+}

@@ -1,0 +1,168 @@
+{
+  "meta": {
+    "lastTouchedVersion": "2026.2.22-2",
+    "lastTouchedAt": "2026-02-23T22:58:54.771Z"
+  },
+  "wizard": {
+    "lastRunAt": "2026-02-23T20:13:29.310Z",
+    "lastRunVersion": "2026.2.22-2",
+    "lastRunCommand": "configure",
+    "lastRunMode": "local"
+  },
+  "models": {
+    "mode": "merge",
+    "providers": {
+      "otto": {
+        "baseUrl": "http://otto:11434/v1",
+        "apiKey": "otto-api",
+        "api": "openai-completions",
+        "models": [
+          {
+            "id": "gpt-oss:latest",
+            "name": "gpt-oss:latest (Custom Provider)",
+            "reasoning": true,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 202752,
+            "maxTokens": 8192
+          }
+        ]
+      }
+    }
+  },
+  "agents": {
+    "defaults": {
+      "model": {
+        "primary": "otto/gpt-oss:latest"
+      },
+      "models": {
+        "otto/gpt-oss:latest": {
+          "alias": "gpt-oss:latest"
+        }
+      },
+      "workspace": "/home/localadmin/.openclaw/workspace",
+      "compaction": {
+        "mode": "safeguard"
+      },
+      "maxConcurrent": 4,
+      "subagents": {
+        "maxConcurrent": 8
+      }
+    },
+    "list": [
+      {
+        "id": "main",
+        "tools": {
+          "elevated": {
+            "enabled": true,
+            "allowFrom": {
+              "signal": [
+                "+17023494151",
+                "uuid:7f931e2c-add0-4977-a945-11782c1987b9"
+              ]
+            }
+          },
+          "exec": {
+            "host": "gateway"
+          }
+        }
+      }
+    ]
+  },
+  "tools": {
+    "elevated": {
+      "enabled": true,
+      "allowFrom": {
+        "signal": [
+          "+17023494151",
+          "uuid:7f931e2c-add0-4977-a945-11782c1987b9"
+        ]
+      }
+    },
+    "exec": {
+      "host": "gateway",
+      "security": "full",
+      "ask": "off"
+    }
+  },
+  "messages": {
+    "ackReactionScope": "group-mentions"
+  },
+  "commands": {
+    "native": "auto",
+    "nativeSkills": "auto",
+    "restart": true,
+    "ownerDisplay": "raw"
+  },
+  "session": {
+    "dmScope": "per-channel-peer"
+  },
+  "hooks": {
+    "internal": {
+      "enabled": true,
+      "entries": {
+        "boot-md": {
+          "enabled": true
+        },
+        "command-logger": {
+          "enabled": true
+        },
+        "session-memory": {
+          "enabled": true
+        },
+        "bootstrap-extra-files": {
+          "enabled": true
+        }
+      }
+    }
+  },
+  "channels": {
+    "signal": {
+      "enabled": true,
+      "account": "+13185430135",
+      "cliPath": "/usr/local/bin/signal-cli",
+      "dmPolicy": "allowlist",
+      "allowFrom": [
+        "*"
+      ],
+      "groupPolicy": "allowlist"
+    }
+  },
+  "gateway": {
+    "port": 18789,
+    "mode": "local",
+    "bind": "loopback",
+    "auth": {
+      "mode": "token",
+      "token": "5d65a1b4a88817e6c55bcff0ae887a726f164648a9b93928"
+    },
+    "tailscale": {
+      "mode": "off",
+      "resetOnExit": false
+    },
+    "nodes": {
+      "denyCommands": [
+        "camera.snap",
+        "camera.clip",
+        "screen.record",
+        "calendar.add",
+        "contacts.add",
+        "reminders.add"
+      ]
+    }
+  },
+  "plugins": {
+    "entries": {
+      "signal": {
+        "enabled": true
+      }
+    }
+  }
+}
