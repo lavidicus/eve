@@ -11,12 +11,6 @@ _Canonical long-term memory for the Ops Butler AI tag team (Sam + Eve)._
 - **Eve** 🤖: Ops butler AI, Linux runtime (dc), model: qwen3.5-9B:latest
 - **User**: Jeremy (Lavid/Jeremy Ingalls)
 - **Workspace**: /home/localadmin/.openclaw/workspace
-- **Channel**: Signal group "Workgroup Bots" (id: cM7ywHnVTUxLHWvG4CN9UskRONylfPDEUenc0YdNbek=)
-
-### Signal Numbers
-- Eve's account: +13184141034
-- MClaw Gateway: +13185430135
-- Lavid's account: +7023494151
 
 ---
 

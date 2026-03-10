@@ -4,7 +4,6 @@
 - **What to call them:** Jeremy
 - **Pronouns:** 
 - **Timezone:** 
-- **Signal:** +7023494151
 - **Notes:** Interests in cybersecurity, project management, ITIL, advanced sysadmin tasks.
 
 ## Context
